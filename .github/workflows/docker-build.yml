@@ -17,3 +17,9 @@ jobs:
       # 第三步，查看镜像列表
       - name: list docker image
         run: docker image ls
+      # 第四步，登录docker hub
+      - name: dockerhub login
+        run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+      # 提交镜像
+      - name: push to dockerhub
+        run: docker image push thisisalifetime/flask-redis:latest
