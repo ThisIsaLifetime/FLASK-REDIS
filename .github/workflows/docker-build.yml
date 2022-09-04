@@ -25,7 +25,7 @@ jobs:
         name: buildx list
         run: docker buildx ls
       -
-        name: buildx list
+        name: push
         run: docker buildx build --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 -t thisisalifetime/flask-redis:latest .
 
 
